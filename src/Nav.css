@@ -1,0 +1,140 @@
+/* NAVBAR WRAPPER */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  z-index: 1000;
+}
+
+/* MAIN NAV CONTAINER */
+.nav-container {
+  background: rgba(30, 41, 59, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 999px;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* LOGO */
+.nav-logo {
+ display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-logo img {
+  height: 42px;          /* Adjust as needed */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+border-radius: 100px;
+}
+.nav-logo:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* DESKTOP LINKS */
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff2d2d, #ff7a18);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* MENU BUTTON (MOBILE) */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: absolute;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(14px);
+  width: calc(100% - 60px);
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 14px;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 12px;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255, 45, 45, 0.15);
+  color: white;
+}
+
+/* SHOW MOBILE MENU */
+.mobile-menu.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .nav-logo img {
+    height: 36px;
+  }
+}
